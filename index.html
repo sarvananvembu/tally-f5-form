@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta charset='utf-8'>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(236, 231, 238);
+  color: white;
+  scroll-behavior: smooth;
+}
+
+#regForm {
+  background-color: #ffffff;
+  margin: 100px auto;
+  font-family: Raleway;
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;
+}
+
+h1 {
+  text-align: center;
+  font-family: Arial;
+}
+h2 {
+  text-align: center;
+  font-family: Arial;
+}
+
+input[type="text"]{
+  padding: 10px;
+  width: 100%;
+  font-size: 13px;
+  font-family: arial;
+  border: 1px solid #aaaaaa;
+  height: 30px;
+}
+input[type="tel"]{
+  padding: 10px;
+  width: 100%;
+  font-size: 13px;
+  font-family: arial;
+  border: 1px solid #aaaaaa;
+  height: 30px;
+
+}
+input[type="email"]{
+  padding: 10px;
+  width: 100%;
+  font-size: 13px;
+  font-family: arial;
+  border: 1px solid #aaaaaa;
+  height: 30px;
+}
+::-webkit-input-placeholder {
+  font-size: 12px;
+}
+
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #f0e400;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4CAF50;
+}
+.multiselect {
+  width: 300px;
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+  background-color: white;
+  color: black;
+  padding: 6px;
+  font-size: 12px;
+}
+
+#checkboxes label {
+  display: block;
+}
+
+#checkboxes label:hover {
+  background-color: #1e90ff;
+}
+/*2nd checkbox*/
+#checkboxes2 {
+  display: none;
+  border: 1px #dadada solid;
+}
+
+#checkboxes2 label {
+  display: block;
+}
+
+#checkboxes2 label:hover {
+  background-color: #1e90ff;
+}
+</style>
+  </head>
+  <body>
+    <div class="container" style="background-color:rgb(236, 231, 238);">
+    <button type="button" id="tally-button" onclick="nextPrev(1)" onclick="showdiv()" style="background-color:#421359; width:100%; border:1px solid white; box-shadow: 2px 2px 2px grey;">Accountant Requirement Employer Form<br></button><br><br>
+
+    </div>
+    <div class="container" style="padding-top:10px; background-color:#421359;">
+          <h1 style="font-size:20px; text-align:left; font-weight:lighter;">F5 - Accountant Requirement Employer Form</h1>
+    <p style="font-size:13px;font-weight:lighter;">Kindly fill up the form with care and accuracy. You will be contacted by our GENESIS Recruitment Officer within 3 working days.</p>
+
+    <!-- Contact Form - sent to a Google Sheet -->
+    <form id='foo' action="post" name="foo">
+      <div class="tab">
+    <p><input id="company-name" placeholder="What is your Company name?..." oninput="this.className = ''" name="company-name" type="text"></p>
+    <div class="" style="padding-top:4px;">
+
+    </div>
+    <p><input id="company-location" placeholder="What is your Company located?..." oninput="this.className = ''" name="company-location" type="text"></p>
+    <div class="" style="padding-top:4px;">
+
+    </div>
+    <p><input id="name" placeholder="What is your Company located?..." oninput="this.className = ''" name="name" type="text"></p>
+    <div class="" style="padding-top:4px;">
+
+    </div>
+    <select id="desig" name="desig" style="font-size:13px;padding:6px; width:100%;" onchange="designations(this.value)">
+      <option id="blank"value="undefined">What is your designation?</option>
+      <option value="Owner/ Managing Director">Owner/ Managing Director</option>
+      <option value="Owner Relative">Owner Relative</option>
+      <option value="HR Manager">HR Manager</option>
+      <option value="Admin Manager">Admin Manager</option>
+      <option value="Accountant">Accountant</option>
+      <option value="">Others</option>
+    </select>
+    <textarea name="designation" id="designation" rows="1" style="width:100%; padding:10px; font-size:12px; display:none;"></textarea>
+
+    <br><br>
+    <select class="business-nature" name="business-nature" style="font-size:13px;padding:6px; width:100%;" onchange="desig(this.value)">
+      <option id="blank"value="">What is your nature of business?</option>
+      <option value="Service Business">Service Business</option>
+      <option value="Wholesale Trading / Distribution">Wholesale Trading / Distribution</option>
+      <option value="Retail Shop">Retail Shop</option>
+      <option value="Restaurant">Restaurant</option>
+      <option value="Manufacturing Business">Manufacturing Business</option>
+      <option value="Education / Trust/ Society/ Association">Education / Trust/ Society/ Association</option>
+      <option value="Multiple streams of Business">Multiple streams of Business</option>
+
+
+    </select>
+    <br><br>
+
+  <p><input id="phone" type="tel" name="phone" placeholder="Enter your 10 digit mobile number? " onblur="mobilefunction()"></p>
+  <p id="mobileerror" style="color:red; font-size:12px;"></p>
+
+  <p><input id="email" type="email" name="email" placeholder="What is your email id?"> </p>
+  <p id="emailerror" style="color:red;font-size:12px;"></p>
+
+  <p><input id="resident" type="text" name="resident" placeholder="Where is your residence/office located? "> </p>
+ <!--select box with multiselect checkbox-->
+
+  </div>
+  <div class="tab">
+    <h1 style="font-size:14px; float:left;">Section2: Vacancy Details</h1>
+    <input id="vacancies" type="text" name="vacancies" placeholder="How many numbers of vacancies do you have? "><br><br>
+    <select class="employment-type" name="employment-type" style="padding:6px; font-size:12px; width:100%;">
+      <option value="">What is the kind of employment type? </option>
+      <option value="Full Time Employment">Full Time Employment</option>
+      <option value="Part Time Employment">Part Time Employment</option>
+      <option value="Freelance/ Contract Staff">Freelance/ Contract Staff</option>
+
+    </select><br><br>
+
+    <input type="text" name="work-time" id="work-time" placeholder="What is the Work Timing?" ><br>
+
+    <br>
+  <select class="experience-factor" name="experience-factor"style="font-size:14px;padding:6px; width:100%;">
+    <option value="">How many years of experience you have in the Accounts domain? </option>
+    <option value="Fresher (less than 1 year)">Fresher (less than 1 year)</option>
+    <option value="1 to 2 years experienced">1 to 2 years experienced</option>
+    <option value="2 to 5 years experienced">2 to 5 years experienced</option>
+    <option value="5 to 10 years experienced">5 to 10 years experienced</option>
+    <option value="More than 10 years">More than 10 years</option>
+
+
+  </select><br><br>
+  <select class="gender" name="gender"style="font-size:14px;padding:6px; width:100%;">
+    <option value="">Gender Preference </option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Anyone">Anyone</option>
+
+  </select><br>
+<br>
+<input type="text" name="min-salary" id="min-salary" placeholder="What is the Minimum salary you will offer per month?">
+<br>
+<br>
+<input type="text" name="max-salary" id="max-salary" placeholder="What is the Maximum salary you will offer per month?">
+<br>
+<br>
+
+<textarea id="comments" name="comments" rows="2" cols="50" placeholder="Do you want to ask us something more regarding your candidate requirement?" style="font-face:arial; font-size:13px; width:100%;"></textarea><hr>
+<br><br>
+
+</div>
+<p id="formerror" style="color:red;font-size:12px;"></p>
+
+<!---->
+<div class="tab">
+  <h2 style="font-face:arial; font-size:30px; padding-top:280px;">Click on the Sumbit button to send us your details</h1>
+
+</div>
+<div class="tab">
+  <h1 style="font-face:arial; font-size:30px; padding-top:280px;">Thankyou for your details. You will be contacted by our GENESIS Recruitment Officer within 2 working days.</h1>
+
+</div>
+
+<!---->
+  <div style="overflow:auto;">
+    <div style="float:right; padding-top:10px;">
+      <button type="button" id="prevBtn" onclick="nextPrev(-1)"  style="background-color:#FE344F">Previous</button>
+      <button type="button" id="nextBtn" onclick="nextPrev(1)" style="background-color:#343AFE">Next</button>
+       <button id="submit" type='submit' onclick="submits(1);">Submit</button>
+    </div>
+  </div>
+  <!-- Circles which indicates the steps of the form: -->
+  <div style="text-align:center;margin-top:40px;">
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step" style="display:none;"></span>
+
+
+  </div>
+
+    </form>
+  </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script src='google-script.js'></script>
+  <script src='extra-scripts.js'></script>
+
+
+</html>
