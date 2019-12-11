@@ -135,3 +135,27 @@ $('#desig').on('change', function() {
         $('#designation').hide();
     }
 });
+//selectBox 2
+function Busi(data) {
+
+document.getElementById ("business-nature-input").value = data.value;
+
+}
+//selectBox 3
+function Vaca(data) {
+
+document.getElementById ("employment-type-input").value = data.value;
+
+}
+//selectBox 4
+function Exper(data) {
+
+document.getElementById ("experience-factor-input").value = data.value;
+
+}
+//selectBox 5
+function Gend(data) {
+
+document.getElementById ("gender-input").value = data.value;
+
+}

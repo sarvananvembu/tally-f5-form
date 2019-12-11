@@ -207,7 +207,7 @@ button:hover {
     <textarea name="designation" id="designation" rows="1" style="width:100%; padding:10px; font-size:12px; display:none;"></textarea>
 
     <br><br>
-    <select class="business-nature" name="business-nature" style="font-size:13px;padding:6px; width:100%;" onchange="desig(this.value)">
+    <select class="business-nature" name="business-nature" style="font-size:13px;padding:6px; width:100%;" onchange="Busi(this)">
       <option id="blank"value="">What is your nature of business?</option>
       <option value="Service Business">Service Business</option>
       <option value="Wholesale Trading / Distribution">Wholesale Trading / Distribution</option>
@@ -216,9 +216,9 @@ button:hover {
       <option value="Manufacturing Business">Manufacturing Business</option>
       <option value="Education / Trust/ Society/ Association">Education / Trust/ Society/ Association</option>
       <option value="Multiple streams of Business">Multiple streams of Business</option>
-
-
     </select>
+    <input type="text" name="business-nature-input" id="business-nature-input" style="display:none;">
+
     <br><br>
 
   <p><input id="phone" type="tel" name="phone" placeholder="Enter your 10 digit mobile number? " onblur="mobilefunction()"></p>
@@ -234,32 +234,33 @@ button:hover {
   <div class="tab">
     <h1 style="font-size:14px; float:left;">Section2: Vacancy Details</h1>
     <input id="vacancies" type="text" name="vacancies" placeholder="How many numbers of vacancies do you have? "><br><br>
-    <select class="employment-type" name="employment-type" style="padding:6px; font-size:12px; width:100%;">
+    <select class="employment-type" name="employment-type" style="padding:6px; font-size:12px; width:100%;" onchange="Vaca(this)">
       <option value="">What is the kind of employment type? </option>
       <option value="Full Time Employment">Full Time Employment</option>
       <option value="Part Time Employment">Part Time Employment</option>
       <option value="Freelance/ Contract Staff">Freelance/ Contract Staff</option>
-
+<input type="text" name="employment-type-input" id="employment-type-input" style="display:none;">
     </select><br><br>
 
     <input type="text" name="work-time" id="work-time" placeholder="What is the Work Timing?" ><br>
 
     <br>
-  <select class="experience-factor" name="experience-factor"style="font-size:14px;padding:6px; width:100%;">
+  <select class="experience-factor" name="experience-factor"style="font-size:14px;padding:6px; width:100%;" onchange="Exper(this)">
     <option value="">How many years of experience you have in the Accounts domain? </option>
     <option value="Fresher (less than 1 year)">Fresher (less than 1 year)</option>
     <option value="1 to 2 years experienced">1 to 2 years experienced</option>
     <option value="2 to 5 years experienced">2 to 5 years experienced</option>
     <option value="5 to 10 years experienced">5 to 10 years experienced</option>
     <option value="More than 10 years">More than 10 years</option>
-
+ <input type="text" name="experience-factor-input" id="experience-factor-input" style="display:none;">
 
   </select><br><br>
-  <select class="gender" name="gender"style="font-size:14px;padding:6px; width:100%;">
+  <select class="gender" name="gender"style="font-size:14px;padding:6px; width:100%;" onchange="Gend(this)">
     <option value="">Gender Preference </option>
     <option value="Male">Male</option>
     <option value="Female">Female</option>
     <option value="Anyone">Anyone</option>
+    <input type="text" name="gender-input" id="gender-input" style="display:none;">
 
   </select><br>
 <br>
