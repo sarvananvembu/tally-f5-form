@@ -196,7 +196,7 @@ button:hover {
 
     </div>
     <select id="desig" name="desig" style="font-size:13px;padding:6px; width:100%;" onchange="designations(this.value)">
-      <option id="blank"value="undefined">What is your designation?</option>
+      <option id="blank"value="">What is your designation?</option>
       <option value="Owner/ Managing Director">Owner/ Managing Director</option>
       <option value="Owner Relative">Owner Relative</option>
       <option value="HR Manager">HR Manager</option>
@@ -204,7 +204,7 @@ button:hover {
       <option value="Accountant">Accountant</option>
       <option value="">Others</option>
     </select>
-    <textarea name="designation" id="designation" rows="1" style="width:100%; padding:10px; font-size:12px; display:none;"></textarea>
+    <input type="text" name="designation" id="designation" style="width:100%; padding:10px; font-size:12px; display:none;">
 
     <br><br>
     <select class="business-nature" name="business-nature" style="font-size:13px;padding:6px; width:100%;" onchange="Busi(this)">
