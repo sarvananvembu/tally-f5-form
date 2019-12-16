@@ -159,3 +159,16 @@ function Gend(data) {
 document.getElementById ("gender-input").value = data.value;
 
 }
+//select box with checkbox
+var expanded = false;
+
+function showCheckboxes4() {
+  var checkboxes = document.getElementById("checkboxes4");
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+  } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+  }
+}

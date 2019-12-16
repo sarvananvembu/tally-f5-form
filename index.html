@@ -269,6 +269,25 @@ button:hover {
 <br>
 <br>
 
+<div class="multiselect" style="width:100%;">
+<div class="selectBox" onclick="showCheckboxes4()">
+  <select style="font-size:13px;padding:6px;">
+    <option>How did you come to know about GENESIS? </option>
+  </select>
+  <div class="overSelect"></div>
+</div>
+<div id="checkboxes4" style="background-color:white; color:black; font-size:13px; display:none; padding:6px;">
+<input type="checkbox" name="know" class="know" onclick="add_sub(this);" value="Through Friends & Relatives"><label>Through Friends & Relatives</label><br>
+<input type="checkbox" name="know" class="know" onclick="add_sub(this);" value="Through Google"><label>Through Google</label><br>
+<input type="checkbox" name="know" class="know" onclick="add_sub(this);" value="Through Facebook"><label>Through Facebook</label><br>
+<input type="checkbox" name="know" class="know" onclick="add_sub(this);" value="Through SMS/WhatsApp"><label>Through SMS/WhatsApp</label><br>
+<input type="checkbox" name="know" class="know" onclick="add_sub(this);" value="Through Newspaper/ TV Ads"><label>Through Newspaper/ TV Ads</label><br>
+<input type="checkbox" name="know" class="know" onclick="add_sub(this);" value="Through Newspaper/ TV Ads"><label>Through Linked in</label><br>
+
+</div>
+<input id="known-medium"type="text" name="known-medium" style="display:none;">
+</div><br>
+
 <textarea id="comments" name="comments" rows="2" cols="50" placeholder="Do you want to ask us something more regarding your candidate requirement?" style="font-face:arial; font-size:13px; width:100%;"></textarea><hr>
 <br><br>
 
