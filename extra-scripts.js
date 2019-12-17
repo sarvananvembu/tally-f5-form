@@ -159,6 +159,11 @@ function Gend(data) {
 document.getElementById ("gender-input").value = data.value;
 
 }
+function Vt(data) {
+
+document.getElementById ("vacancy-length-input").value = data.value;
+
+}
 //select box with checkbox
 var expanded = false;
 
