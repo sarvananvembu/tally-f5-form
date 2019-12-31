@@ -170,6 +170,11 @@ button:hover {
   background-color: #1e90ff;
 }
 </style>
+<script>
+function Thankyou() {
+  location.replace("https://www.genesistally.com/services/need-accountant/f5-form-thank-you-page");
+}
+</script>
   </head>
   <body>
     <div class="container" style="background-color:rgb(236, 231, 238);">
@@ -320,8 +325,8 @@ button:hover {
     <div style="float:right; padding-top:10px;">
       <button type="button" id="prevBtn" onclick="nextPrev(-1)"  style="background-color:#FE344F">Previous</button>
       <button type="button" id="nextBtn" onclick="nextPrev(1)" style="background-color:#343AFE">Next</button>
-    <!--     <button id="submit" type='submit'onclick="window.location.replace("http://www.w3schools.com");">Submit</button>-->
-     <button id="submit" type='submit' onclick="submits(1);">Submit</button>
+       <button id="submit" type='submit'onclick="Thankyou()">Submit</button>
+<!-- <button id="submit" type='submit' onclick="submits(1);">Submit</button>-->
     </div>
   </div>
   <!-- Circles which indicates the steps of the form: -->
