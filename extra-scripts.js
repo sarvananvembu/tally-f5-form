@@ -177,3 +177,9 @@ function showCheckboxes4() {
     expanded = false;
   }
 }
+
+function submits() {
+  window.open("https://www.genesistally.com/services/need-accountant/f5-form-thank-you-page");
+  setTimeout("window.close()",1500) 
+
+}
