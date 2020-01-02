@@ -178,5 +178,5 @@ function showCheckboxes4() {
   }
 }
 function Sub() {
-  window.open("https://www.genesistally.com/services/need-accountant/f5-form-thank-you-page");
+  window.open("https://www.genesistally.com/services/need-accountant/thank-you");
 }
